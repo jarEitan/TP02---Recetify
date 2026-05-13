@@ -28,4 +28,24 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+     public IActionResult Resultado(string nombre, DateTime fechaNacimiento, string tipoComida, double presupuesto, int cantidadPersonas)
+    {
+        Receta receta = new Receta();
+        receta.nombre = nombre;
+        receta.fechaNacimiento = fechaNacimiento;
+        receta.tipoComida = tipoComida;
+        receta.presupuesto = presupuesto;
+        receta.CantidadPersonas = CantidadPersonas;
+
+        ViewBag.Nombre = receta.nombre;
+        ViewBag.Edad = receta.CalcularEdad();
+        ViewBag.Plato = receta.DeterminarPlato();
+        ViewBag.Tiempo = receta.CalcularTiempo();
+        ViewBag.Dificultad = receta.DeterminarDificultad();
+        ViewBag.CantidadPersonas = receta.CantidadPersonas
+
+        return View("Resultado");
+    }
+    *
 }
