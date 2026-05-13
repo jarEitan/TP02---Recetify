@@ -1,8 +1,53 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Buscar Recetas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form asp-action="Resultado" method="post">
+    <section class="form-section">
+        <h2>Información de la Receta</h2>
+
+        <div class="form-field">
+            <label>Nombre</label>
+            <input type="text" name="nombre"/>
+        </div>
+
+        <div class="form-field">
+            <label>Fecha de Nacimiento</label>
+            <input type="date" name="fechaNacimiento"/>
+        </div>
+
+        <div class="form-field">
+            <label>Tipo de Comida</label>
+            <div class="opcion">
+                <input type="radio" name="tipoComida" value="Caliente" id="comida_caliente">
+                <label for="comida_caliente">Caliente</label>
+            </div>
+            <div class="opcion">
+                <input type="radio" name="tipoComida" value="Fría" id="comida_fria">
+                <label for="comida_fria">Fría</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Información del Presupuesto</h2>
+
+        <div class="form-field">
+            <label>Presupuesto (en pesos)</label>
+            <input type="number" name="presupuesto"/>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Cantidad de Personas</h2>
+
+        <div class="form-field">
+            <label>Cantidad de Personas (mínimo 1, máximo 20)</label>
+            <input type="number" name="cantidadPersonas" min="1" max="20" value="1"/>
+        </div>
+    </section>
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Buscar Recetas</button>
+    </div>
+</form>

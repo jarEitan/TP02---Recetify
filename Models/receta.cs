@@ -10,8 +10,10 @@ public class receta
 
     private int edad;
     private string plato;
+    private int tiempoEstimado;
+    private string dificultad;
 
-    public void CalcularEdad()
+    public int CalcularEdad()
     {
         var nacimiento = fechaDeNacimiento.Date;
         var hoy = DateTime.Today;
@@ -21,9 +23,10 @@ public class receta
             resultado--;
         }
         edad = resultado;
+        return edad;
     }
 
-    public void DeterminarPlato()
+    public string DeterminarPlato()
     {
         if(tipoComida == "Caliente")
         {
@@ -55,5 +58,51 @@ public class receta
                 plato = "Ensalada simple";
             }
         }
+        return plato;
+    }
+
+    public int CalcularTiempo(){
+
+        if(tipoComida == "Caliente")
+        {
+            if(cantidadComensales <= 3){
+                tiempoEstimado = 20;
+            } else if (cantidadComensales <= 7){
+                tiempoEstimado = 40;
+            } else if (cantidadComensales >= 8){
+                tiempoEstimado = 80;
+            }
+        }
+        else if(tipoComida == "Fría")
+        {
+            if(cantidadComensales <= 3){
+                tiempoEstimado = 10;
+            } else if (cantidadComensales <= 7){
+                tiempoEstimado = 20;
+            } else if (cantidadComensales >= 8){
+                tiempoEstimado = 40;
+            }
+        }
+        return tiempoEstimado;
+    }
+
+    public string calcularDificultad(){
+        if(presupuesto < 3000){
+            if (cantidadComensales <= 3){
+                dificultad = "Principiante";
+            } else { dificultad = "Intermedio"; }
+        }
+        if(presupuesto >= 3000 && presupuesto <= 7000){
+            dificultad = "Intermedio";
+        }
+        else 
+        {
+            if (cantidadComensales <= 7){
+                dificultad = "Intermedio";
+            } else {
+                dificultad = "Avanzado";
+            }
+        }
+        return dificultad;
     }
 }
