@@ -15,14 +15,13 @@ public class receta
 
     public int CalcularEdad()
     {
-        var nacimiento = fechaDeNacimiento.Date;
-        var hoy = DateTime.Today;
-        int resultado = hoy.Year - nacimiento.Year;
-        if (hoy.Month < nacimiento.Month || (hoy.Month == nacimiento.Month && hoy.Day < nacimiento.Day))
+        DateTime fechaActual = DateTime.Now;
+        edad = fechaActual.Year - fechaDeNacimiento.Year;
+
+        if (fechaActual.Month < fechaDeNacimiento.Month || (fechaActual.Month == fechaDeNacimiento.Month && fechaActual.Day < fechaDeNacimiento.Day))
         {
-            resultado--;
+            edad--;
         }
-        edad = resultado;
         return edad;
     }
 
