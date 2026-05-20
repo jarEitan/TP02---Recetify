@@ -34,13 +34,6 @@ body {
   color: white;
   margin-right: 1%;
 }
-.boton{
-  padding: 0.5%;
-  background-color: blue;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 3px 3px 10px blue;
-}
 
 form {
   margin-left: 3%;

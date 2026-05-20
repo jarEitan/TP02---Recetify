@@ -8,22 +8,22 @@
 
         <div class="form-field">
             <label>Nombre</label>
-            <input type="text" name="nombre"/>
+            <input type="text" name="nombre" required/>
         </div>
 
         <div class="form-field">
             <label>Fecha de Nacimiento</label>
-            <input type="date" name="fechaDeNacimiento"/>
+            <input type="date" name="fechaDeNacimiento" required/>
         </div>
 
         <div class="form-field">
             <label>Tipo de Comida</label>
             <div class="opcion">
-                <input type="radio" name="tipoComida" value="Caliente" id="comida_caliente">
+                <input type="radio" name="tipoComida" value="Caliente" id="comida_caliente" required>
                 <label for="comida_caliente">Caliente</label>
             </div>
             <div class="opcion">
-                <input type="radio" name="tipoComida" value="Fría" id="comida_fria">
+                <input type="radio" name="tipoComida" value="Fría" id="comida_fria" required>
                 <label for="comida_fria">Fría</label>
             </div>
         </div>
@@ -34,7 +34,7 @@
 
         <div class="form-field">
             <label>Presupuesto (en pesos)</label>
-            <input type="number" name="presupuesto"/>
+            <input type="number" name="presupuesto" required/>
         </div>
     </section>
 
@@ -43,7 +43,7 @@
 
         <div class="form-field">
             <label>Cantidad de Personas (mínimo 1, máximo 20)</label>
-            <input type="number" name="cantidadComensales" min="1" max="20" value="1"/>
+            <input type="number" name="cantidadComensales" min="1" max="20" value="1" required/>
         </div>
     </section>
 
